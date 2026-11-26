@@ -1,0 +1,20 @@
+Nabless rescue tool, release 2026-11-26-r7
+
+This is a copy of the page that lets you use and recover a Nabless Vault
+without Nabless. It needs no server of ours. Unzip it and serve the folder
+from your own computer or any web address (see README.txt inside).
+
+It knows contract revisions 1 to 7.
+
+Check that your copy is genuine before you use it:
+  1. Work out the fingerprint of the zip:   shasum -a 256 nabless-rescue-2026-11-26-r7.zip
+  2. It must be exactly:                    41e26de92721f7e3f977387a1bf92ec974a5b0190e99c1017abb376243c45cd5
+  3. Compare that with the fingerprint shown in the Nabless app when you
+     downloaded it, and with the one published by Nabless and by its auditor.
+  4. If SHA256SUMS.txt.sig is present, check Nabless's signature:
+       ssh-keygen -Y verify -f allowed_signers -I rescue@nabless.com \
+         -n nabless-rescue -s SHA256SUMS.txt.sig < SHA256SUMS.txt
+
+Never type your recovery kit's or backup key's password into a copy you
+have not checked. A hardware wallet as backup key never hands its key to
+any page, genuine or not.
